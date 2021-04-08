@@ -1,27 +1,27 @@
 Politechnika Œwiêtokrzyska
 Wydzia³ Elektrotechniki Automatyki i InformatykiGrupa 1D21A
 Piotr GrzybTechnologie obiektowe 
-Projekt etap 1
+Projekt etap 2
 1. Sk³ad grupy
 Grupa jednoosobowa:
 * Piotr Grzyb – adres: piotrg6711@gmail.com
 2. Temat projektu
 Temat nr. 28 – Pluginy. 
-Plugin do œrodowiska PyCharm który bêdzie generowa³ na podstawie klas tekst do narzêdzia PlantUML.
+Plugin do œrodowiska Eclipse który bêdzie generowa³ na podstawie klas tekst do narzêdzia PlantUML. 
 W prosty sposób otrzymamy diagram klas powsta³y w oparciu o wygenerowany tekst.
 Jeœli czas pozwoli plugin bêdzie posiada³ równie¿ opcjê generowania gotowego pliku graficznego w oparciu o klasy programu.
 
 3. Spis technologii
 Wstêpny spis technolgii:
-* Python 3.8
-* Graphviz
-* Gradle lub DevKit
-* wxPython lub PyQT
-* UI Inspector
+* Java 14.0.1
+* Eclipse Standard 2021
+* Eclipse for RCP and RAP Developers 2021
+* Gradle 
 
 4. Przybli¿ony harmonogram
 * Tydzieñ 1 – ukoñczenie etapu 1
-* Do pierwszego/drugiego tygodnia kwietnia – konfiguracja œrodowiska i narzêdzi buduj¹cych pluginy (Gradle/DevKit)
+* Pocz¹tek kwietnia – etap 2 i wstêpne rozwa¿ania
+* Do pierwszego/drugiego tygodnia kwietnia – konfiguracja œrodowiska i narzêdzi buduj¹cych pluginy (Gradle i Eclipse)
 * Do koñca kwietnia – wstêpne generowanie informacji na podstawie klas w programie
 * Do koñca maja  – generowanie tekstu na podstawie klas i informacji o relacjach miêdzy nimi
 * Do koñca czerwca – dopracowanie pluginu, w wolnym czasie prace nad opcjonaln¹ funkcjonalnoœci¹ 
