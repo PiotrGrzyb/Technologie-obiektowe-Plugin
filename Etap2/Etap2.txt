@@ -1,0 +1,36 @@
+Politechnika Œwiêtokrzyska
+Wydzia³ Elektrotechniki Automatyki i InformatykiGrupa 1D21A
+Piotr GrzybTechnologie obiektowe 
+Projekt etap 1
+1. Sk³ad grupy
+Grupa jednoosobowa:
+* Piotr Grzyb – adres: piotrg6711@gmail.com
+2. Temat projektu
+Temat nr. 28 – Pluginy. 
+Plugin do œrodowiska PyCharm który bêdzie generowa³ na podstawie klas tekst do narzêdzia PlantUML.
+W prosty sposób otrzymamy diagram klas powsta³y w oparciu o wygenerowany tekst.
+Jeœli czas pozwoli plugin bêdzie posiada³ równie¿ opcjê generowania gotowego pliku graficznego w oparciu o klasy programu.
+
+3. Spis technologii
+Wstêpny spis technolgii:
+* Python 3.8
+* Graphviz
+* Gradle lub DevKit
+* wxPython lub PyQT
+* UI Inspector
+
+4. Przybli¿ony harmonogram
+* Tydzieñ 1 – ukoñczenie etapu 1
+* Do pierwszego/drugiego tygodnia kwietnia – konfiguracja œrodowiska i narzêdzi buduj¹cych pluginy (Gradle/DevKit)
+* Do koñca kwietnia – wstêpne generowanie informacji na podstawie klas w programie
+* Do koñca maja  – generowanie tekstu na podstawie klas i informacji o relacjach miêdzy nimi
+* Do koñca czerwca – dopracowanie pluginu, w wolnym czasie prace nad opcjonaln¹ funkcjonalnoœci¹ 
+
+5. Podzia³ prac
+Piotr Grzyb – ca³oœæ
+
+6. Tematy innych projektów
+Piotr Grzyb:
+* Programowanie systemów rozproszonych – £amacz hase³
+* Praca in¿ynierska – System unikania kolizji dla poruszaj¹cego siê obiektu z wykorzystaniem ewolucyjnych sieci neuronowych
+* Praca magisterska – brak tematu 
