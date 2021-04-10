@@ -10,3 +10,7 @@ Require-Bundle: org.eclipse.ui,
 Bundle-RequiredExecutionEnvironment: JavaSE-14
 Automatic-Module-Name: com.packtpub.e4.plantUML
 Bundle-ActivationPolicy: lazy
+Import-Package: org.apache.maven.shared.utils.reflection,
+ org.codehaus.plexus.interpolation.reflection;version="1.25.0",
+ org.codehaus.plexus.util.reflection,
+ org.eclipse.ecf.core.util.reflection;version="2.3.0"
