@@ -103,6 +103,17 @@ public class TextView{
 		
 		text = new Text(parent, SWT.BORDER);
 		text.setLayoutData(new RowData(377, 25));
+		text.addListener(SWT.Verify, new Listener()
+		{
+		    @Override
+		    public void handleEvent(Event e)
+		    {
+		        Text source = (Text) e.widget;
+		        final String oldS = source.getText();
+		        final String newS = oldS.substring(0, e.start) + e.text + oldS.substring(e.end);
+		        System.out.println(oldS + " -> " + newS);
+		    }
+		});
 		
 		Button btnNewButton = new Button(parent, SWT.NONE);
 		btnNewButton.setLayoutData(new RowData(172, 29));
@@ -114,8 +125,10 @@ public class TextView{
 		
 		List list = new List(parent, SWT.BORDER);
 		list.setLayoutData(new RowData(297, 253));
-		Reflections reflections = new Reflections("toplantuml2.parts");
+		//Reflections reflections = new Reflections("toplantuml2.parts");
 		java.util.List<Class<?>> lista = getClassesInPackage("toplantuml2.parts");
+        lista.forEach(System.out::println);
+
 		String[] nowy = (String[]) lista.toArray();
 		for(String print : nowy)
             list.add(print);

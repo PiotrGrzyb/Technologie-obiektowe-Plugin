@@ -57,12 +57,13 @@ public class getClasses {
 
     public static void main(String[] args) throws IOException {
         List list = getClassesInPackage("testclass");
+        list.forEach(System.out::println);
+
         String[] nowy = (String[]) list.toArray();
 
         List<String> uga = new ArrayList();
         for(String print : nowy)
             uga.add(print);
 
-        uga.forEach(System.out::println);
     }
 }
