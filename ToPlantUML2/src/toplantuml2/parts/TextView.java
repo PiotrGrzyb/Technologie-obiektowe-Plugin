@@ -31,7 +31,7 @@ public class TextView {
 	private Label myLabelInView;
 	private Text text;
 	
-	//Reflections reflections = new Reflections("java.util.Set");
+	Reflections reflections = new Reflections("toplantuml2.parts");
 	 
 	@PostConstruct
 	public void createPartControl(Composite parent) {
