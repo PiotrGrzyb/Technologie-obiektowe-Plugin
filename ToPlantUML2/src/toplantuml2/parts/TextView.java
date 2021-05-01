@@ -1,7 +1,13 @@
 package toplantuml2.parts;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Set;
 import java.util.TimeZone;
+import java.util.jar.JarEntry;
+import java.util.jar.JarInputStream;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
@@ -14,6 +20,7 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.layout.RowLayout;
@@ -21,18 +28,64 @@ import org.eclipse.swt.widgets.Text;
 import org.reflections.Reflections;
 import org.eclipse.swt.layout.RowData;
 import org.eclipse.swt.widgets.List;
+import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Slider;
 import org.eclipse.jface.viewers.ComboViewer;
 import org.eclipse.swt.events.MouseWheelListener;
 import org.eclipse.swt.events.MouseEvent;
 
-public class TextView {
+public class TextView{
 	private Label myLabelInView;
 	private Text text;
 	
-	Reflections reflections = new Reflections("toplantuml2.parts");
-	 
+	
+	public static final java.util.List<Class<?>> getClassesInPackage(String packageName) {
+        String path = packageName.replaceAll("\\.", File.separator);
+        java.util.List<Class<?>> classes = new ArrayList<>();
+        String[] classPathEntries = System.getProperty("java.class.path").split(
+                System.getProperty("path.separator")
+        );
+
+        String name;
+        for (String classpathEntry : classPathEntries) {
+            if (classpathEntry.endsWith(".jar")) {
+                File jar = new File(classpathEntry);
+                try {
+                    JarInputStream is = new JarInputStream(new FileInputStream(jar));
+                    JarEntry entry;
+                    while((entry = is.getNextJarEntry()) != null) {
+                        name = entry.getName();
+                        if (name.endsWith(".class")) {
+                            if (name.contains(path) && name.endsWith(".class")) {
+                                String classPath = name.substring(0, entry.getName().length() - 6);
+                                classPath = classPath.replaceAll("[\\|/]", ".");
+                                classes.add(Class.forName(classPath));
+                            }
+                        }
+                    }
+                } catch (Exception ex) {
+                    // Silence is gold
+                }
+            } else {
+                try {
+                    File base = new File(classpathEntry + File.separatorChar + path);
+                    for (File file : base.listFiles()) {
+                        name = file.getName();
+                        if (name.endsWith(".class")) {
+                            name = name.substring(0, name.length() - 6);
+                            classes.add(Class.forName(packageName + "." + name));
+                        }
+                    }
+                } catch (Exception ex) {
+                    // Kiedys mo¿e siê przydaæ obs³uga wyj¹tków
+                }
+            }
+        }
+
+        return classes;
+    }
+	
 	@PostConstruct
 	public void createPartControl(Composite parent) {
 		parent.addMouseWheelListener(new MouseWheelListener() {
@@ -61,7 +114,19 @@ public class TextView {
 		
 		List list = new List(parent, SWT.BORDER);
 		list.setLayoutData(new RowData(297, 253));
+		Reflections reflections = new Reflections("toplantuml2.parts");
+		java.util.List<Class<?>> lista = getClassesInPackage("toplantuml2.parts");
+		String[] nowy = (String[]) lista.toArray();
+		for(String print : nowy)
+            list.add(print);
 		
+		 list.addListener(SWT.Selection, new Listener() {
+	            @Override
+	            public void handleEvent(Event arg0) {
+	                if(list.getSelectionCount() > 0)
+	                    System.out.println(Arrays.toString(list.getSelection()));
+	            }
+	        });
 	}
 
 	@Focus

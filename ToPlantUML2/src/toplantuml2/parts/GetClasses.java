@@ -1,17 +1,17 @@
+package toplantuml2.parts;
+
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.IOException;
-import java.lang.reflect.*;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.jar.JarEntry;
 import java.util.jar.JarInputStream;
 
-public class getClasses {
+import org.eclipse.swt.widgets.List;
 
-    public static final List<Class<?>> getClassesInPackage(String packageName) {
+public class GetClasses {
+	public static final java.util.List<Class<?>> getClassesInPackage(String packageName) {
         String path = packageName.replaceAll("\\.", File.separator);
-        List<Class<?>> classes = new ArrayList<>();
+        java.util.List<Class<?>> classes = new ArrayList<>();
         String[] classPathEntries = System.getProperty("java.class.path").split(
                 System.getProperty("path.separator")
         );
@@ -47,22 +47,11 @@ public class getClasses {
                         }
                     }
                 } catch (Exception ex) {
-                    // Kiedys moÅ¼e siÄ™ przydaÄ‡ obsÅ‚uga wyjÄ…tkÃ³w
+                    // Kiedys mo¿e siê przydaæ obs³uga wyj¹tków
                 }
             }
         }
 
         return classes;
-    }
-
-    public static void main(String[] args) throws IOException {
-        List list = getClassesInPackage("testclass");
-        String[] nowy = (String[]) list.toArray();
-
-        List<String> uga = new ArrayList();
-        for(String print : nowy)
-            uga.add(print);
-
-        uga.forEach(System.out::println);
     }
 }
