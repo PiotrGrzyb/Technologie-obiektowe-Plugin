@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ccfaab89-996e-403a-9a0f-59d98661ae26" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../ToPlantUML2/bin/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ToPlantUML2/bin/toplantuml2/parts/TextView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ToPlantUML2/bin/toplantuml2/parts/TextView$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ToPlantUML2/bin/toplantuml2/parts/TextView$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ToPlantUML2/bin/toplantuml2/parts/TextView$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ToPlantUML2/bin/toplantuml2/parts/TextView.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ToPlantUML2/bin/toplantuml2/parts/TextView.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ToPlantUML2/src/toplantuml2/parts/TextView.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ToPlantUML2/src/toplantuml2/parts/TextView.java" afterDir="false" />
@@ -28,7 +30,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1rw0OjMKqfSNMTsnbjkix4zkblG" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -41,7 +45,25 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Piotr\Desktop\Technologie-obiektowe-Plugin-Python\testclass\src2" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="testclass.Main" />
+      <module name="testclass" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testclass.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="getClasses" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="getClasses" />
       <module name="testclass" />
@@ -51,6 +73,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.getClasses" />
       </list>
     </recent_temporary>
@@ -88,21 +111,25 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1386" height="192" key="GridCell.Tab.0.bottom" timestamp="1619879789270">
+    <state width="1386" height="181" key="GridCell.Tab.0.bottom" timestamp="1620563630336">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1386" height="192" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1619879789270" />
-    <state width="1386" height="192" key="GridCell.Tab.0.center" timestamp="1619879789270">
+    <state width="1386" height="181" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1620563630336" />
+    <state width="1386" height="181" key="GridCell.Tab.0.center" timestamp="1620563630336">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1386" height="192" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1619879789270" />
-    <state width="1386" height="192" key="GridCell.Tab.0.left" timestamp="1619879789270">
+    <state width="1386" height="181" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1620563630336" />
+    <state width="1386" height="181" key="GridCell.Tab.0.left" timestamp="1620563630336">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1386" height="192" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1619879789270" />
-    <state width="1386" height="192" key="GridCell.Tab.0.right" timestamp="1619879789270">
+    <state width="1386" height="181" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1620563630336" />
+    <state width="1386" height="181" key="GridCell.Tab.0.right" timestamp="1620563630336">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1386" height="192" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1619879789270" />
+    <state width="1386" height="181" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1620563630336" />
+    <state x="441" y="122" key="RollbackChangesDialog" timestamp="1620559583708">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="441" y="122" key="RollbackChangesDialog/0.0.1536.824@0.0.1536.824" timestamp="1620559583708" />
   </component>
 </project>

@@ -56,7 +56,7 @@ public class getClasses {
     }
 
     public static void main(String[] args) throws IOException {
-        List list = getClassesInPackage("testclass");
+        List list = getClassesInPackage("topplantuml2.parts");
         list.forEach(System.out::println);
 
         String[] nowy = (String[]) list.toArray();

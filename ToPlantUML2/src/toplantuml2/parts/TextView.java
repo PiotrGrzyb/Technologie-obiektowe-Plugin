@@ -9,6 +9,8 @@ import java.util.TimeZone;
 import java.util.jar.JarEntry;
 import java.util.jar.JarInputStream;
 
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -86,6 +88,24 @@ public class TextView{
         return classes;
     }
 	
+	public static java.util.List<String> findClasses(File directory)
+            throws ClassNotFoundException {
+		java.util.List<String> classes = new ArrayList<String>();
+        String tmp;
+        java.util.List<String> ClassList = new ArrayList<String>();
+        
+        if (!directory.exists()) {
+            return classes;
+        }
+        File[] files = directory.listFiles();
+        for (File file : files) {
+            if(file.getName().endsWith(".java")){
+            System.out.println(file.getName().substring(0, file.getName().length() - 5));}
+            //lista.add(file.getName().substring(0, file.getName().length() - 5));
+        }
+        return classes;
+    }  
+	
 	@PostConstruct
 	public void createPartControl(Composite parent) {
 		parent.addMouseWheelListener(new MouseWheelListener() {
@@ -100,7 +120,7 @@ public class TextView{
 		Label lblNewLabel = new Label(parent, SWT.NONE);
 		lblNewLabel.setLayoutData(new RowData(621, 40));
 		lblNewLabel.setText("Podaj pakiet, który chcesz przekonwertowaæ do PlantUML");
-		
+		String tmp;
 		text = new Text(parent, SWT.BORDER);
 		text.setLayoutData(new RowData(377, 25));
 		text.addListener(SWT.Verify, new Listener()
@@ -112,13 +132,30 @@ public class TextView{
 		        final String oldS = source.getText();
 		        final String newS = oldS.substring(0, e.start) + e.text + oldS.substring(e.end);
 		        System.out.println(oldS + " -> " + newS);
+				java.util.List<Class<?>> lista = getClassesInPackage(newS);
+		        lista.forEach(System.out::println);
+		        
+		        File directory = new File(newS);
+		        try {
+					findClasses(directory);
+				} catch (ClassNotFoundException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+		        
+
 		    }
 		});
 		
-		Button btnNewButton = new Button(parent, SWT.NONE);
+		Button btnNewButton = new Button(parent, SWT.PUSH);
 		btnNewButton.setLayoutData(new RowData(172, 29));
 		btnNewButton.setText("Generuj plik tekstowy");
-		
+		btnNewButton.addSelectionListener(new SelectionAdapter() {
+		      public void widgetSelected(SelectionEvent event) {
+		        System.out.println("selection event");
+		      }
+		    });
+		 
 		Label lblNewLabel_1 = new Label(parent, SWT.NONE);
 		lblNewLabel_1.setLayoutData(new RowData(665, 34));
 		lblNewLabel_1.setText("Klasy wewn¹trz pakietu");
