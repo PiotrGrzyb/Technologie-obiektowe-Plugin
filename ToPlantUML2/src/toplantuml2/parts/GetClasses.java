@@ -34,7 +34,7 @@ public class GetClasses {
                         }
                     }
                 } catch (Exception ex) {
-                    // Silence is gold
+                	 // Kiedys mo¿e siê przydaæ obs³uga wyj¹tków
                 }
             } else {
                 try {
