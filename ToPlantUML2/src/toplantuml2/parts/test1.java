@@ -7,9 +7,14 @@ public class test1 {
 		return licznik;
 	}
 }
-class test2 extends test1{
+class test22 extends test1{
 	int licznik2 = getLicznik();
 }
-class Test extends test2{
+class Test12 extends test2{
 
+}
+
+class Testowa1 extends test1{
+	int licznik1;
+	int licznik2;
 }
