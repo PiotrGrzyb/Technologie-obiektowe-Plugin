@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="plugin">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="extension" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence minOccurs="0">
+              <xs:element name="page" minOccurs="0">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="id" use="required" />
+                      <xs:attribute name="class" use="required" />
+                      <xs:attribute name="name" use="required" />
+                      <xs:attribute name="category" />
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="category" minOccurs="0">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="name" use="required" />
+                      <xs:attribute name="id" use="required" />
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="view" minOccurs="0">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="name" use="required" />
+                      <xs:attribute name="icon" use="required" />
+                      <xs:attribute name="category" use="required" />
+                      <xs:attribute name="class" use="required" />
+                      <xs:attribute name="id" use="required" />
+                      <xs:attribute name="allowMultiple" type="xs:boolean" use="required" />
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="perspectiveExtension" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="view">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute name="id" use="required" />
+                            <xs:attribute name="minimized" type="xs:boolean" use="required" />
+                            <xs:attribute name="moveable" type="xs:boolean" use="required" />
+                            <xs:attribute name="ratio" type="xs:decimal" use="required" />
+                            <xs:attribute name="relationship" use="required" />
+                            <xs:attribute name="relative" use="required" />
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="targetID" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="super" minOccurs="0">
+                <xs:complexType>
+                  <xs:attribute name="type" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="persistent" minOccurs="0">
+                <xs:complexType>
+                  <xs:attribute name="value" type="xs:boolean" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="attribute" minOccurs="0">
+                <xs:complexType>
+                  <xs:attribute name="name" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="linkOpener" minOccurs="0">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="linkOpenerClass" use="required" />
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="diagramTextPostProcessor" minOccurs="0">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="postProcessorClass" use="required" />
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="point" use="required" />
+            <xs:attribute name="id" />
+            <xs:attribute name="name" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="extension-point" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:attribute name="id" use="required" />
+            <xs:attribute name="name" use="required" />
+            <xs:attribute name="schema" use="required" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

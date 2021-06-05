@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            id="PlantUMLWorkbench.preferences.about"
+            class="PlantUMLWorkbench.preferences.WorkbenchPreferencePage"
+            name="PlantUML">
+      </page>
+      <page
+            id="PlantUMLWorkbench.preferences.DiagramTextProvidersPreferencePage"
+            class="PlantUMLWorkbench.preferences.DiagramIntentProvidersPreferencePage"
+            category="PlantUMLWorkbench.preferences.about"
+            name="Diagram text providers">
+      </page>
+      <page
+            id="PlantUMLWorkbench.preferences.DiagramIntentPreferencePage"
+            class="PlantUMLWorkbench.preferences.DiagramIntentPreferencePage"
+            category="PlantUMLWorkbench.preferences.about"
+            name="Diagram generation">
+      </page>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            name="PlantUml"
+            id="PlantUMLWorkbench.eclipse">
+      </category>
+      <view
+            name="PlantUML"
+            icon="icons/p5.gif"
+            category="PlantUMLWorkbench.eclipse"
+            class="PlantUMLWorkbench.eclipse.views.PlantUmlView"
+            id="PlantUMLWorkbench.eclipse.views.PlantUmlView"
+            allowMultiple="true"
+            >
+      </view>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.ui.resourcePerspective">
+         <view
+               id="PlantUMLWorkbench.eclipse.views.PlantUmlView"
+               minimized="true"
+               moveable="true"
+               ratio="0.5"
+               relationship="right"
+               relative="org.eclipse.ui.views.TaskList">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   
+	<extension point="org.eclipse.core.resources.markers" 
+    	id="plantumlmarker" 
+      	name="Plant UML marker">
+      	<super type="org.eclipse.core.resources.marker"/>
+      	<persistent value="true"/>
+      	<attribute name="original"/>
+      	<attribute name="diagramSource"/>
+      	<attribute name="derivation"/>
+   	</extension>
+
+   <extension-point id="diagramTextProvider" name="Diagram Text Provider" schema="schema/diagramTextProvider.exsd"/>
+   <extension-point id="diagramIntentProvider" name="Diagram Intent Provider" schema="schema/diagramIntentProvider.exsd"/>
+   <extension-point id="linkOpener" name="Link Opener" schema="schema/linkOpener.exsd"/>
+   <extension-point id="diagramTextPostProcessor" name="Diagram Text Post-processor" schema="schema/diagramTextPostProcessor.exsd"/>
+   <extension
+         point="PlantUMLWorkbench.linkOpener">
+      <linkOpener
+            linkOpenerClass="PlantUMLWorkbench.eclipse.utils.DefaultLinkOpener">
+      </linkOpener>
+      <linkOpener
+            linkOpenerClass="PlantUMLWorkbench.eclipse.utils.PlatformLinkOpener">
+      </linkOpener>
+      <linkOpener
+            linkOpenerClass="PlantUMLWorkbench.eclipse.utils.MarkerLinkOpener">
+      </linkOpener>
+   </extension>
+
+   <extension
+         point="PlantUMLWorkbench.diagramTextPostProcessor">
+      <diagramTextPostProcessor
+            postProcessorClass="PlantUMLWorkbench.postprocessors.DiagramTextInjectionPostProcessor">
+      </diagramTextPostProcessor>
+   </extension>
+</plugin>
