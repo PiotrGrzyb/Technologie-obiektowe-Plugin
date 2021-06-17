@@ -9,6 +9,7 @@ int licznik;
 }
 
 class klasa2 extends klasa1 {
+	klasa1 nowa = new klasa1();
 	
 }
 
@@ -21,6 +22,7 @@ class klasa4 extends klasa1 implements fejs{
 }
 
 class klasa5 extends klasa1{
+
 }
 
 
@@ -40,19 +42,24 @@ class Book {
         this.author = author;
     }
 }
+class L<T>{
+	
+}
 
-class Library {
+class Library extends L<Book> {
 	 
-    // reference to refer to list of books.
-    private final List<Book> books;
+    /*private final List<Book> books;
  
     Library(List<Book> books) { this.books = books; }
  
-    // Getting total number of books
     public List<Book> getTotalBooksInLibrary()
     {
  
         return books;
-    }
+    }*/
 }
- 
+
+enum Minutes {
+	  MINUTES
+	}
+
