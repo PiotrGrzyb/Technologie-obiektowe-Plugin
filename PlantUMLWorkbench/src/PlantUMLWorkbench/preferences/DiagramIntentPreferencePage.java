@@ -72,19 +72,11 @@ public class DiagramIntentPreferencePage extends PreferencePage implements IWork
 		return panel;
 	}
 
-	/**
-	 * Called when user clicks Restore Defaults
-	 */
 	@Override
 	protected void performDefaults() {
 		basePropertiesPathText.setText("");
 	}
 
-	/**
-	 * Called when user clicks Apply or OK
-	 *
-	 * @return boolean
-	 */
 	@Override
 	public boolean performOk() {
 		// Get the preference store

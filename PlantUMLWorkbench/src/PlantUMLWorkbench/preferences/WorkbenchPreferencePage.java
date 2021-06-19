@@ -131,20 +131,14 @@ public class WorkbenchPreferencePage extends PreferencePage implements IWorkbenc
 		return pnl;
 	}
 
-	/**
-	 * Called when user clicks Restore Defaults
-	 */
+
 	@Override
 	protected void performDefaults() {
 		// Reset the fields to the defaults
 		graphvizPath.setStringValue("");
 	}
 
-	/**
-	 * Called when user clicks Apply or OK
-	 *
-	 * @return boolean
-	 */
+
 	@Override
 	public boolean performOk() {
 		// Get the preference store

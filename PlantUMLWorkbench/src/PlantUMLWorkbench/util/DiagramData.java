@@ -30,11 +30,6 @@ import PlantUMLWorkbench.eclipse.utils.PlantumlConstants;
 import PlantUMLWorkbench.eclipse.utils.WorkbenchUtil;
 import net.sourceforge.plantuml.security.SFile;
 
-/**
- * Definition of a Diagram Object.
- *
- * @author durif_c
- */
 public class DiagramData {
 
 	// diagram source
@@ -82,13 +77,7 @@ public class DiagramData {
 		this.markerAttributes = markerAttributes;
 	}
 
-	/**
-	 * Generate the DiagramImage for textDiagram and imageNumber. Use
-	 * extractTextDiagram(int cursorPosition, String contents) to set
-	 * textDiagram and imageNumber
-	 *
-	 * @return ImageData of the current textDiagram and imageNumber
-	 */
+
 	public ImageData getImage(final int imageNum, final Collection<LinkData> links) {
 		// generate the image for textDiagram and imageNumber
 		if (original != null) {
@@ -107,10 +96,6 @@ public class DiagramData {
 		return getImage(0, null);
 	}
 
-	/**
-	 * Set the Graphviz path with the path in the preference store if it is
-	 * filled
-	 */
 	private static void setGraphvizPath() {
 		final IPreferenceStore prefStore = Activator.getDefault().getPreferenceStore();
 		final String dotPath = prefStore.getString(PlantumlConstants.GRAPHVIZ_PATH);
@@ -149,13 +134,6 @@ public class DiagramData {
 	private static void parseImageMapString(final String cMapData, final Collection<LinkData> links) {
 		final String[] areaElements = cMapData.split(Pattern.quote("<area "));
 		for (final String areaElement : areaElements) {
-			//			int pos = areaElement.indexOf('>');
-			//			if (pos >= 0) {
-			//				areaElement = areaElement.substring(0, pos);
-			//				if (areaElement.endsWith("/")) {
-			//					areaElement = areaElement.substring(0, areaElement.length() - 1);
-			//				}
-			//			}
 			final String coords = getAttributeValue(areaElement, "coords");
 			if (coords != null) {
 				final LinkData link = new LinkData();
@@ -199,33 +177,6 @@ public class DiagramData {
 			link.rect.height /= sy;
 		}
 	}
-
-	/*
-	    @startuml
-		actor Bob [[http://plantuml.com/sequence]]
-		actor "This is [[http://plantuml.com/sequence Alice]] actor" as Alice
-		Bob -> Alice [[http://plantuml.com/start]] : hello
-		note left [[http://plantuml.com/start]]
-		a note with a link
-		end note
-		Alice -> Bob : hello with [[http://plantuml.com/start{Tooltip for message} some link]]
-		note right [[http://plantuml.com/start]] : another note
-		note left of Bob
-		You can use [[http://plantuml.com/start links in notes]] also.
-		end note
-		@enduml
-
-		<map id="plantuml_map" name="plantuml_map">
-		<area shape="rect" id="id1" href="http://plantuml.com/sequence" title="http://plantuml.com/sequence" alt="" coords="375,221,408,238"/>
-		<area shape="rect" id="id2" href="http://plantuml.com/sequence" title="http://plantuml.com/sequence" alt="" coords="375,68,408,85"/>
-		<area shape="rect" id="id3" href="http://plantuml.com/start" title="Tooltip for message" alt="" coords="321,143,383,158"/>
-		<area shape="rect" id="id4" href="http://plantuml.com/start" title="http://plantuml.com/start" alt="" coords="94,183,180,199"/>
-		<area shape="rect" id="id5" href="http://plantuml.com/start" title="http://plantuml.com/start" alt="" coords="245,104,388,126"/>
-		<area shape="rect" id="id6" href="http://plantuml.com/start" title="http://plantuml.com/start" alt="" coords="99,101,229,126"/>
-		<area shape="rect" id="id7" href="http://plantuml.com/start" title="http://plantuml.com/start" alt="" coords="239,140,496,165"/>
-		<area shape="rect" id="id8" href="http://plantuml.com/sequence" title="http://plantuml.com/sequence" alt="" coords="222,5,248,257"/>
-		</map>
-	 */
 
 	private static String getAttributeValue(final String element, final String attributeName) {
 		final String prefix = attributeName + "=\"";

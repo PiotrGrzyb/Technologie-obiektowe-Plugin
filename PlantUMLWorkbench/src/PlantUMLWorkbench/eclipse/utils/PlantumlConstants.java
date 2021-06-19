@@ -1,16 +1,7 @@
 package PlantUMLWorkbench.eclipse.utils;
 
-/**
- * Interface with all the constants of PlantUml
- * 
- * @author durif_c
- * 
- */
 public interface PlantumlConstants {
 
-	/**
-	 * Labels of the view PlantUml
-	 */
 	public static final String COPY_MENU = "Copy";
 	public static final String COPY_SOURCE_MENU = "Copy source";
 	public static final String COPY_ASCII_MENU = "Copy as ASCII art";
@@ -27,9 +18,6 @@ public interface PlantumlConstants {
 	public static final String SPAWN_BUTTON = "Open another view";
 	public static final String TOGGLE_GENERATION_BUTTON = "Link with editor";
 
-	/**
-	 * Labels for the Preferences
-	 */
 	public static final String GRAPHVIZ_PATH = "graphvizPath";
 	public static final String GRAPHVIZ_PATH_LABEL = "Path to the dot executable of Graphviz :";
 	public static final String GRAPHVIZ_PATH_TEXT_LABEL = "If the Graphviz software is not installed in the default directory, set the path in the field below.";

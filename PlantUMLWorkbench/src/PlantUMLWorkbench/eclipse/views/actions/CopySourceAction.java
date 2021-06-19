@@ -10,17 +10,10 @@ import org.eclipse.swt.widgets.Display;
 import PlantUMLWorkbench.eclipse.utils.PlantumlConstants;
 import PlantUMLWorkbench.util.DiagramData;
 
-/**Manage the copy action.
- *
- * @author durif_c
- *
- */
+
 public class CopySourceAction extends DiagramAction<DiagramData, Display> {
 
-	/**
-	 *
-	 * @param diagram Diagram
-	 */
+
 	public CopySourceAction(final Supplier<DiagramData> diagramDataSupplier, final Display display) {
 		super(diagramDataSupplier, display);
 		setText(PlantumlConstants.COPY_SOURCE_MENU);

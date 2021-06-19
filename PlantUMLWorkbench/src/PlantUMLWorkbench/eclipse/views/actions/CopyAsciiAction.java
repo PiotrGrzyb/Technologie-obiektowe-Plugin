@@ -14,19 +14,10 @@ import net.sourceforge.plantuml.SourceStringReader;
 import PlantUMLWorkbench.eclipse.utils.PlantumlConstants;
 import PlantUMLWorkbench.util.DiagramImageData;
 
-/**
- * Manage the copy action.
- *
- * @author durif_c
- *
- */
+
 public class CopyAsciiAction extends DiagramImageAction<Display> {
 
-	/**
-	 *
-	 * @param diagram
-	 *            Diagram
-	 */
+
 	public CopyAsciiAction(final Supplier<DiagramImageData> diagramImageDataSupplier, final Display display) {
 		super( diagramImageDataSupplier, display);
 		setText(PlantumlConstants.COPY_ASCII_MENU);

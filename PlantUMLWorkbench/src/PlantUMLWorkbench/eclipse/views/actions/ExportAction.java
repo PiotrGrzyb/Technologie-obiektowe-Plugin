@@ -20,11 +20,7 @@ import PlantUMLWorkbench.eclipse.utils.PlantumlUtil;
 import PlantUMLWorkbench.eclipse.utils.WorkbenchUtil;
 import PlantUMLWorkbench.util.DiagramImageData;
 
-/**Manage the Export of the diagram.
- *
- * @author durif_c
- *
- */
+
 public class ExportAction extends DiagramImageAction<Shell> {
 
 	public ExportAction(final Supplier<DiagramImageData> diagramImageDataSupplier, final Shell shell) {

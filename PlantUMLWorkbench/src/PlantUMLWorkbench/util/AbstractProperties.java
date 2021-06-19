@@ -31,7 +31,7 @@ public abstract class AbstractProperties {
 		if (valueClass == String.class) {
 			return;
 		}
-		// we only allow simple types that support valueOf(String)
+		// only allow simple types that support valueOf(String)
 		try {
 			final Method m = valueClass.getMethod("valueOf", valueOfParamTypes);
 			if (m.getReturnType() == valueClass && Modifier.isStatic(m.getModifiers())) {

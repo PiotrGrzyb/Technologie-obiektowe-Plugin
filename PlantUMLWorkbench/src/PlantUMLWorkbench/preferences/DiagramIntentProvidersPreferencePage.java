@@ -62,9 +62,7 @@ public class DiagramIntentProvidersPreferencePage extends PreferencePage impleme
 		return new String[] { id, label, key };
 	}
 
-	/**
-	 * Called when user clicks Restore Defaults
-	 */
+
 	@Override
 	protected void performDefaults() {
 		for (final Button diagramTextProviderButton : diagramTextProviderButtons.values()) {
@@ -85,11 +83,7 @@ public class DiagramIntentProvidersPreferencePage extends PreferencePage impleme
 		return true;
 	}
 
-	/**
-	 * Called when user clicks Apply or OK
-	 *
-	 * @return boolean
-	 */
+
 	@Override
 	public boolean performOk() {
 		// Get the preference store

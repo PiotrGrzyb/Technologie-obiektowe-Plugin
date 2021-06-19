@@ -42,13 +42,17 @@ class Book {
         this.author = author;
     }
 }
-class L<T>{
+class my<T> 
+{
+	
+}
+class L<T> extends my<T>{
 	
 }
 
 class Library extends L<Book> {
 	 
-    /*private final List<Book> books;
+    private final List<Book> books;
  
     Library(List<Book> books) { this.books = books; }
  
@@ -56,7 +60,7 @@ class Library extends L<Book> {
     {
  
         return books;
-    }*/
+    }
 }
 
 enum Minutes {

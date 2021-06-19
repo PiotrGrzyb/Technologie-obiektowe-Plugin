@@ -17,12 +17,7 @@ import PlantUMLWorkbench.eclipse.utils.PlantumlConstants;
 import PlantUMLWorkbench.eclipse.utils.WorkbenchUtil;
 import PlantUMLWorkbench.util.DiagramImageData;
 
-/**
- * manage the print of the diagram image.
- *
- * @author durif_c
- *
- */
+
 public class PrintAction extends DiagramImageAction<Shell> {
 
 	public PrintAction(final Supplier<DiagramImageData> diagramImageDataSupplier, final Shell shell) {
@@ -97,15 +92,7 @@ public class PrintAction extends DiagramImageAction<Shell> {
 
 	}
 
-	/**
-	 * @param printer Printer
-	 * @param horizontalMargin int
-	 * @param verticalMargin int
-	 * @param displayWidth int
-	 * @param displayHeigth int
-	 *
-	 * @throws Throwable
-	 */
+
 	private void printImage(final ImageData iData, final Printer printer, final int horizontalMargin,
 			final int verticalMargin, final int displayWidth, final int displayHeigth)
 					throws Throwable {
