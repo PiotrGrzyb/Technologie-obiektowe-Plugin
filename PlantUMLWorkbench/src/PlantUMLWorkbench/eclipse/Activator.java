@@ -43,7 +43,7 @@ import PlantUMLWorkbench.util.DiagramTextPostProcessor;
 public class Activator extends AbstractUIPlugin implements DiagramIntentProviderRegistry {
 
 	// The plug-in ID
-	public static final String PLUGIN_ID = "net.sourceforge.plantuml.eclipse";
+	public static final String PLUGIN_ID = "PlantUMLWorkbench";
 
 	// The shared instance
 	private static Activator plugin;

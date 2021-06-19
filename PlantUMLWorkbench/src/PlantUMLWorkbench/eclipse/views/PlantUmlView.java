@@ -31,24 +31,6 @@ import PlantUMLWorkbench.eclipse.views.actions.SaveAction;
 import PlantUMLWorkbench.util.DiagramData;
 import PlantUMLWorkbench.util.DiagramImageData;
 
-/**
- *
- * The view permit to generate image diagram of UML modelisation.
- * <P>
- * To launch this view, go to Windows > Show View > Other... > PlantUml >
- * PlantUml. <BR>
- * To use it, it's very easy. you put your text describing the diagram in your
- * file (*.java, *.txt, ...) and you click in the text and automatically, the
- * UML diagram will be generated in the view.
- * <P>
- * To use the image you have the following functionalities on the right-click :
- * <BR>
- * - Copy the image in the buffer. <BR>
- * - Export the image has a file (to be implement). <BR>
- * - Print the image (to be implement).
- *
- * @author durif_c
- */
 
 public class PlantUmlView extends AbstractPlantUmlView implements ILinkSupport {
 
